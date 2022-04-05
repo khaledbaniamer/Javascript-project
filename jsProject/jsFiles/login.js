@@ -10,9 +10,9 @@ const logEmail = document.getElementById("logemail");
 const logpass = document.getElementById("logpass");
 
 const phonePattern = /[07]{2,3}[7-9]{1,2}[0-9]{7,8}/;
-const passPattern =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+const passPattern =  /[A-Z]{1,2}[a-zA-z0-9$!]{7,8}/;
 const namePattern =  /^[a-z ]+$/gi;
-const emailPattern =/^[a-zA-Z]+[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/i;
+const emailPattern =/\w+@\w+.\w+/gi;
 
 registerbtn.addEventListener('click' , function(e){
     e.preventDefault()
@@ -57,9 +57,10 @@ registerbtn.addEventListener('click' , function(e){
         }else{
             passConfirm.style.border = ""
             passConfirm.value =""
+            validateForm();
         }
 
-        validateForm();
+        
 
 
 
