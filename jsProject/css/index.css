@@ -18,16 +18,7 @@
 
   }
 
-  #logout{
-    cursor: pointer;
-    grid-area: 2/ 18 / 3/ 19;
-    border: white 1px;
-    border-radius: 35px;
-    padding: 25px;
-    color: #444;
-    font-size: 17px;
-    z-index: 1;
-  }
+
 
   #logout:hover{
     background-color: #FFC229;
@@ -180,6 +171,12 @@
 #continaer *{
       margin-bottom: 20px;
       padding: 15px;
+      grid-column: 2/8;
+      text-align: left;
+  }
+
+  #continaer input{
+      text-align: center;
   }
 
   #card , #nextqustion{
@@ -189,10 +186,10 @@
   }
 
 h1{
-    grid-area:1/9/5/11;
+    grid-area:1/10/5/11;
     text-align: center;
     padding: 10px;
-    color: #ffffff;
+    color: #121111;
     
 }
 
@@ -200,7 +197,9 @@ h1{
 
 #scoreCard{
     grid-area: 5/4/9/16;
+    
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
     border: 1px solid #444;;
@@ -210,6 +209,10 @@ h1{
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     border-style: none;
+    
+}
+#message{
+    font-size: 20px;
 }
 #fail{
     /* background-image: linear-gradient(to top left, #e52a5a, #ff585f); */
@@ -327,7 +330,7 @@ h1{
 
 }
 .choice{
-    grid-column:2/6;
+    grid-column:2/8;
     text-align: center;
 }
 
@@ -533,3 +536,15 @@ h1{
         }
 
 }
+
+
+#logout{
+    cursor: pointer;
+    grid-area: 2/ 18 / 3/ 19;
+    border: white 1px;
+    border-radius: 35px;
+    padding: 25px;
+    color: #444;
+    font-size: 17px;
+    z-index: 1;
+  }

@@ -35,7 +35,9 @@ x.onload = function () {
         scoreCard.innerHTML = `            
         <div id="congratulation--fail">Hard Luck!</div>
         <div id="score">Your score is: ${totalResult}% </div>
-        <div id="fail">Fail</div>`
+        <div id="fail">Fail</div>
+        <div id=message>flex-wrap: wrap</div>
+        `
 
         scoreCard.style.backgroundColor = "red"
         scoreCard.style.opacity = .7;
@@ -45,7 +47,10 @@ x.onload = function () {
         scoreCard.innerHTML = `            
         <div id="congratulation--fail">congratulation!</div>
         <div id="score">Your score is: ${totalResult}% </div>
-        <div id="pass">Pass</div>`
+        <div id="pass">Pass</div>
+        <div id=message>We will contact you shortly to arrange an interview with Human Resources
+        </div>
+        `
 
         scoreCard.style.backgroundColor = "green"
         scoreCard.style.opacity = .7;
@@ -62,16 +67,16 @@ x.onload = function () {
             <div id="qustion">Q ${i + 1}:${result[i].question}</div>
             <div id="choices" class="qustionsssss">
                 <div class="choice">
-                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].a}">
+                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].a}"><span class="sp${i+1}"></span>
                 </div>
                 <div class="choice">
-                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].b}">
+                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].b}"><span class="sp${i+1}"></span>
                 </div>
                 <div class="choice">
-                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].c}">
+                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].c}"><span class="sp${i+1}"></span>
                 </div>
                 <div class="choice">
-                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].d}">
+                    <input type="button" disabled class="group${i+1}" class="btn" value="${result[i].d}"><span class="sp${i+1}"></span>
                 </div>
             </div>
             </div>
@@ -86,17 +91,26 @@ x.onload = function () {
 
 
     for(let j = 0 ; j<testChoices.length ; j++){
-        let qqqq = document.querySelectorAll(`.group${j+1}`)   
+        let qqqq = document.querySelectorAll(`.group${j+1}`)
+        let www = document.querySelectorAll(`.sp${j+1}`)   
         for(let l = 0 ; l<qqqq.length ; l++){
             if(l==result[j].correct){
                 
                 qqqq[l].setAttribute("class", "btn-correct")
                 
             }else if (l == sessionStorage.getItem(`${j+1}`)){
+                www[l].innerHTML = "your Answer"
+                www[l].style.color = "red"
                 qqqq[l].setAttribute("class", "btn-fail")
                 
-            }else{
-                qqqq[l].setAttribute("class", "btn-fail")
+            }
+            else{
+                qqqq[l].setAttribute("class", "btn")
+                
+            }
+            if(l==result[j].correct && l == sessionStorage.getItem(`${j+1}`)){
+                www[l].innerHTML = "your Answer"
+                www[l].style.color = "green"
             }
         }
     }
@@ -114,7 +128,6 @@ x.send()
 logout.addEventListener("click" , function(){
     window.location.href = "http://127.0.0.1:5500/jsProject/home.html"
 })
-
 
 
 

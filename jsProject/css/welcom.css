@@ -20,7 +20,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    background: url(bg.png);
+    background: url(images/bg.png);
     background-size:cover ;
 
     border-radius: 50px;

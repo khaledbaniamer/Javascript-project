@@ -19,7 +19,7 @@ body {
     border-radius: 5rem;
     text-align: center;
     background-image: linear-gradient(to right, #ffffffc6, #6f21f477);
-    background: url("background.jpeg");
+    background: url("images/background.jpeg");
     background-size: cover;
 
 }
